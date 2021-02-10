@@ -1,9 +1,14 @@
 # Digital-electronics-1
 
 ## Labiny
-[GitHub Pages](https://pages.github.com/)
 
+*Link :)*
+[Stránky na GitHub](https://pages.github.com/)
 
+**List**
+- George Washington
+- John Adams
+- Thomas Jefferson
 
 První sloupec | Druhý sloupec
 ------------ | -------------
