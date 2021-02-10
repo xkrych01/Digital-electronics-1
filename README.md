@@ -5,10 +5,10 @@
 
 
 
-First Header | Second Header
+První sloupec | Druhý sloupec
 ------------ | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
+První buňka | Druhá buňka
+Nevím | Něco
 
 
 
