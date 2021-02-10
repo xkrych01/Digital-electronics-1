@@ -4,10 +4,9 @@
 
 **Zdrojový kód**
 
-
+[GitHub Pages](https://pages.github.com/)
 ```
 
-[Git Hub] (https://pages.github.com/)
 
 ```
 
