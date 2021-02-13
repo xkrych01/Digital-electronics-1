@@ -88,7 +88,7 @@ end architecture dataflow;
 ```
 
 
-**Screenshot simulace De-Morganových zákonů a upravené vzorce**
+**Screenshot simulace Distribučních funkcí a jejich vzorce**
 ![Simulace](Images/Distribucni_funkce.jpg)
 ![Vzorce](Images/Distribucni_fce.png)
 
