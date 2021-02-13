@@ -2,7 +2,7 @@
 
 ## Labiny (Gates)
 
-Odkaz na můj [GitHub](https://pages.github.com/)
+Odkaz na můj [GitHub](https://github.com/xkrych01/Digital-electronics-1)
 
 
 
