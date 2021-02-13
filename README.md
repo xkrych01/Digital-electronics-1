@@ -1,24 +1,13 @@
 # Digital-electronics-1
 
-## Labiny
+## Labiny (Gates)
 
-*Link :)*
-[Stránky na GitHub](https://pages.github.com/)
-
-**List**
-- George Washington
-- John Adams
-- Thomas Jefferson
+Odkaz na můj [GitHub](https://pages.github.com/)
 
 
-\begin{align*}
-    f(c,b,a) =&~ \overline{b}\,a + \overline{c}\,\overline{b}\\
-    f(c,b,a)_{\textup{NAND}} =&\\
-    f(c,b,a)_{\textup{NOR}} =&\\
-\end{align*}
 
 
-| **c** | **b** |**a** | **f(c,b,a)** | **f(c,b,a)** |**f(c,b,a)** |
+| **c** | **b** |**a** | **f(c,b,a)** | **f(c,b,a)NAND** |**f(c,b,a)NOR** |
 | :-: | :-: | :-: | :-: | :-: | :-: |
 | 0 | 0 | 0 |  |  |  |
 | 0 | 0 | 1 |  |  |  |
