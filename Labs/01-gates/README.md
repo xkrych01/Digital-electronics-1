@@ -56,6 +56,43 @@ end architecture dataflow;
 [Zde](https://www.edaplayground.com/x/FiDd) najdete naprogramovanou simulaci.
 
 
+### 3.
 
 
+**Zdrojový kód**
 
+```
+entity gates is
+	port
+    (
+    	x_i : in std_logic;
+        y_i : in std_logic;
+        z_i : in std_logic;
+        f1_leva : out std_logic;
+        f1_prava : out std_logic;
+        f2_leva : out std_logic;
+        f2_prava : out std_logic
+    );
+
+end entity gates;
+
+
+architecture dataflow of gates is 
+begin 
+	 f1_leva <= (x_i and y_i) or (x_i and z_i);
+     f1_prava <= x_i and (y_i or z_i);
+     f2_leva <= (x_i or y_i) and (x_i or z_i);
+     f2_prava <= x_i or (y_i and z_i);
+     
+end architecture dataflow;
+```
+
+
+**Screenshot simulace De-Morganových zákonů a upravené vzorce**
+![Simulace](Images/Funkce_DeMorganovych_pravidel.jpg)
+![Vzorce](Images/Vzorce.png)
+
+
+**Odkaz na EDA Playground**
+
+[Zde](https://www.edaplayground.com/x/8NYQ) najdete naprogramovanou simulaci.
