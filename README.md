@@ -10,13 +10,13 @@
 - John Adams
 - Thomas Jefferson
 
-```LaTeX
+
 \begin{align*}
     f(c,b,a) =&~ \overline{b}\,a + \overline{c}\,\overline{b}\\
     f(c,b,a)_{\textup{NAND}} =&\\
     f(c,b,a)_{\textup{NOR}} =&\\
 \end{align*}
-```
+
 
 | **c** | **b** |**a** | **f(c,b,a)** |
 | :-: | :-: | :-: | :-: |
