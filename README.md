@@ -1,10 +1,10 @@
 # Digital-electronics-1
 
 ## Laboratoře (Gates)
-###1.
+###1
 Odkaz na můj [GitHub](https://github.com/xkrych01/Digital-electronics-1)
 
-###2.
+###2
 **Zdrojový kód**
 
 ```
