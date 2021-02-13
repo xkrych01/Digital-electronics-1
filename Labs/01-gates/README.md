@@ -50,6 +50,7 @@ end architecture dataflow;
 
 
 **Odkaz na EDA Playground**
+
 [Zde](https://www.edaplayground.com/x/FiDd) najdete naprogramovanou simulaci.
 
 
