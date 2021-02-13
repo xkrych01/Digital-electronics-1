@@ -10,10 +10,24 @@
 - John Adams
 - Thomas Jefferson
 
-První sloupec | Druhý sloupec
------------- | -------------
-První buňka | Druhá buňka
-Nevím | Něco
+```LaTeX
+\begin{align*}
+    f(c,b,a) =&~ \overline{b}\,a + \overline{c}\,\overline{b}\\
+    f(c,b,a)_{\textup{NAND}} =&\\
+    f(c,b,a)_{\textup{NOR}} =&\\
+\end{align*}
+```
+
+| **c** | **b** |**a** | **f(c,b,a)** |
+| :-: | :-: | :-: | :-: |
+| 0 | 0 | 0 |  |
+| 0 | 0 | 1 |  |
+| 0 | 1 | 0 |  |
+| 0 | 1 | 1 |  |
+| 1 | 0 | 0 |  |
+| 1 | 0 | 1 |  |
+| 1 | 1 | 0 |  |
+| 1 | 1 | 1 |  |
 
 
 
