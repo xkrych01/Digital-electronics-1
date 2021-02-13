@@ -31,8 +31,10 @@ end architecture dataflow;
 
 ```
 
-**Screenshot simulace De-Morganových zákonů**
+
+**Screenshot simulace De-Morganových zákonů a upravené vzorce**
 ![Simulace](Images/Funkce_DeMorganovych_pravidel.jpg)
+
 
 **Tabulka zjištěných hodnot ze simulace**
 | **c** | **b** |**a** | **f(c,b,a)** |
@@ -46,6 +48,9 @@ end architecture dataflow;
 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 0 |
 
+
+**Odkaz na EDA Playground**
+[Zde](https://www.edaplayground.com/x/FiDd) najdete naprogramovanou simulaci.
 
 
 
