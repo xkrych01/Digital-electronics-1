@@ -1,10 +1,10 @@
 # Digital-electronics-1
 
 ## Laboratoře (Gates)
-###1
+### 1.
 Odkaz na můj [GitHub](https://github.com/xkrych01/Digital-electronics-1)
 
-###2
+### 2.
 **Zdrojový kód**
 
 ```
@@ -31,6 +31,10 @@ end architecture dataflow;
 
 ```
 
+**Screenshot simulace De-Morganových zákonů**
+
+
+**Tabulka zjištěných hodnot ze simulace**
 | **c** | **b** |**a** | **f(c,b,a)** |
 | :-: | :-: | :-: | :-: |
 | 0 | 0 | 0 | 1 |
