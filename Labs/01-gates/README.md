@@ -32,7 +32,7 @@ end architecture dataflow;
 ```
 
 **Screenshot simulace De-Morganových zákonů**
-
+!(Images/Funkce_DeMorganovych_pravidel.jpg)
 
 **Tabulka zjištěných hodnot ze simulace**
 | **c** | **b** |**a** | **f(c,b,a)** |
