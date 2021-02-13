@@ -89,8 +89,8 @@ end architecture dataflow;
 
 
 **Screenshot simulace De-Morganových zákonů a upravené vzorce**
-![Simulace](Images/Funkce_DeMorganovych_pravidel.jpg)
-![Vzorce](Images/Vzorce.png)
+![Simulace](Images/Distribucni_funkce.jpg)
+![Vzorce](Images/Distribucni_fce.png)
 
 
 **Odkaz na EDA Playground**
