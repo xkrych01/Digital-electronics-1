@@ -34,7 +34,7 @@ end architecture dataflow;
 
 **Screenshot simulace De-Morganových zákonů a upravené vzorce**
 ![Simulace](Images/Funkce_DeMorganovych_pravidel.jpg)
-
+![Vzorce](Images/Vzorce.png)
 
 **Tabulka zjištěných hodnot ze simulace**
 | **c** | **b** |**a** | **f(c,b,a)** |
