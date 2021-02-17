@@ -20,3 +20,4 @@
 
 
 ![Binary comparator functions](Images/comparator.png)
+
