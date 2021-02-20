@@ -1,3 +1,7 @@
+#Lab 02
+
+## Tabulka hodnot
+
 | **Dec. equivalent** | **B[1] B[0]** | **A[1] A[0]** | **B > A** | **B = A** | **B < A** |
 | :-: | :-: | :-: | :-: | :-: | :-: |
 | 0 | 0  0 | 0  0 | 0 | 1 | 0 |
@@ -20,4 +24,7 @@
 
 
 ![Binary comparator functions](Images/comparator.png)
+
+
+## Syntaxe !!!!!
 
