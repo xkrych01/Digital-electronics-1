@@ -22,10 +22,6 @@
 | 15 | 1  1 | 1  1 | 0 | 1 | 0 |
 
 
-
-![Binary comparator functions](Images/comparator.png)
-
-
 ## 0.2 bit K-mapy a logické fce
 
 ![K-mapy](Images/Kmapy.jpg)
