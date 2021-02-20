@@ -32,10 +32,11 @@
 
 ![Logické funkce](Images/Log_fce.jpg)
 
-## Syntaxe !!!!
+## Syntaxe 
 
+### Složení kódu v design.vhd
 ```
-entity comparator_2bit is
+entity comparator_4bit is
     port(
         a_i           : in  std_logic_vector(4 - 1 downto 0);
         b_i           : in  std_logic_vector(4 - 1 downto 0);
@@ -44,9 +45,9 @@ entity comparator_2bit is
         B_rovno_A_o  : out std_logic;
         B_mensi_A_o    : out std_logic      
     );
-end entity comparator_2bit;
+end entity comparator_4bit;
 
-architecture Behavioral of comparator_2bit is
+architecture Behavioral of comparator_4bit is
 begin
 
     B_vetsi_A_o  <= '1' when (b_i > a_i) else '0';
@@ -56,12 +57,14 @@ begin
 end architecture Behavioral;
 ```
 
+
+### Složení kódu v testbench.vhd
 ```
-entity tb_comparator_2bit is
+entity tb_comparator_4bit is
 
-end entity tb_comparator_2bit;
+end entity tb_comparator_4bit;
 
-architecture testbench of tb_comparator_2bit is
+architecture testbench of tb_comparator_4bit is
 
     signal s_a       : std_logic_vector(4 - 1 downto 0);
     signal s_b       : std_logic_vector(4 - 1 downto 0);
@@ -71,7 +74,7 @@ architecture testbench of tb_comparator_2bit is
 
 begin
 
-    uut_comparator_2bit : entity work.comparator_2bit
+    uut_comparator_4bit : entity work.comparator_4bit
         port map(
             a_i           => s_a,
             b_i           => s_b,
@@ -171,10 +174,13 @@ begin
 
 end architecture testbench;
 
-
 ```
 
+### Log
 ```
+analyze design.vhd
+analyze testbench.vhd
+elaborate tb_comparator_4bit
 testbench.vhd:34:9:@0ms:(report note): Stimulus process started
 testbench.vhd:45:9:@200ns:(assertion error): Chyba pro vstupní kombinaci: 0100, 0001
 testbench.vhd:55:9:@400ns:(assertion error): Chyba pro vstupní kombinaci: 0100, 0011
@@ -184,6 +190,6 @@ Finding VCD file...
 ```
 
 
-Odkaz: https://www.edaplayground.com/x/Bt7A
+Odkaz na Edaplayground: https://www.edaplayground.com/x/Bt7A
 
 
