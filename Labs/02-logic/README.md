@@ -26,34 +26,13 @@
 ![Binary comparator functions](Images/comparator.png)
 
 
-## Syntaxe !!!!!
+## 0.2 bit K-mapy a logické fce
 
+![K-mapy](Images/Kmapy.jpg)
 
+![Logické funkce](Images/Log_fce.jpg)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Syntaxe !!!!
 
 
 
