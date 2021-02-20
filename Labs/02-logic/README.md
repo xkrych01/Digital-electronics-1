@@ -82,7 +82,7 @@ begin
     p_stimulus : process
     begin
         
-        report "Stimulus process started" severity note;
+      report "Stimulus process started" severity note;
 
         s_b <= "0000"; s_a <= "0000"; 
         wait for 100 ns;
@@ -171,6 +171,8 @@ begin
 end architecture testbench;
 
 ```
+
+
 
 ### Log
 ```
