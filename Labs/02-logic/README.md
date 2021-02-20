@@ -168,6 +168,7 @@ begin
         wait;
     end process p_stimulus;
 
+
 end architecture testbench;
 
 ```
