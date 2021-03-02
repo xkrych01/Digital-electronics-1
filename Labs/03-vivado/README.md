@@ -79,27 +79,39 @@ p_stimulus : process
 
 ## Creating new project and Addition Source
 
+Quick Start > Create Project
 ![Vytvoření](Images/Create.jpg)
 
+Set Project name and Project location
 ![Jméno](Images/Name.jpg)
 
+Set type RTL project
 ![Typ](Images/Typ.jpg)
 
+Create design.vhd. Click Create file set File type to VHDL, File name and click OK.
 ![Přidání zdroje](Images/AddSources.jpg)
 
+Don't add Constrains
 ![Contain](Images/Contain.jpg)
 
+Click to Boards next to Parts and select Nexys A7-50T
 ![Deska](Images/Board.jpg)
 
+Finish it.
 ![Dokončení](Images/Finish.jpg)
 
+Don't define module click OK and Yes
 ![Definování In/Out signálů](Images/Def_InOut.jpg)
 
+In File clict to Add Sources...
 ![Přidání TB](Images/AddSouces.jpg)
 
+Choise Add or create simulation sources
 ![Pojmenování TB](Images/Sources.jpg)
 
+Create tesbench.vhd. Click Create file set File type to VHDL, File name and click OK.
 ![Vytvoření TB](Images/CreateTb.jpg)
 
+Don't define module click OK and Yes
 ![Vytvoření](Images/DefTb_InOut.jpg)
 
