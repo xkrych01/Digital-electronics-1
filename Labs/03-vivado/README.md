@@ -72,8 +72,34 @@ p_stimulus : process
     end process p_stimulus;
 
 ```
+
+### Simulation
+
 ![Simulace](Images/Simulace.jpg)
 
 ## Creating new project and Addition Source
 
-![Logické funkce](Images/Log_fce.jpg)
+![Vytvoření](Images/Create.jpg)
+
+![Jméno](Images/Name.jpg)
+
+![Typ](Images/Typ.jpg)
+
+![Přidání zdroje](Images/AddSources.jpg)
+
+![Contain](Images/Contain.jpg)
+
+![Deska](Images/Board.jpg)
+
+![Dokončení](Images/Finish.jpg)
+
+![Definování In/Out signálů](Images/Def_InOut.jpg)
+
+![Přidání TB](Images/AddSouces.jpg)
+
+![Pojmenování TB](Images/Sources.jpg)
+
+![Vytvoření TB](Images/CreateTb.jpg)
+
+![Vytvoření](Images/DefTb_InOut.jpg)
+
