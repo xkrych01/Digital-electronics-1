@@ -77,7 +77,7 @@ p_stimulus : process
 
 ![Simulace](Images/Simulace.jpg)
 
-## Creating new project and Addition Source
+## 3) Creating new project and Addition Source
 
 
 Quick Start > Create Project
