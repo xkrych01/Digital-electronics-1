@@ -22,7 +22,7 @@
 | LED15 | V11 | SW15 | V10 |
 
 
-## Multiplexer 4-to-1
+## 2) Multiplexer 4-to-1
 
 ### Architecture from mux_2bit_4to1.vhd
 
