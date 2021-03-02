@@ -72,3 +72,8 @@ p_stimulus : process
     end process p_stimulus;
 
 ```
+![Simulace](Images/Simulace.jpg)
+
+## Creating new project and Addition Source
+
+![Logické funkce](Images/Log_fce.jpg)
