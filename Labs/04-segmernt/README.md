@@ -127,7 +127,7 @@ p_stimulus : process
 
 ```
 
-
+![](Images/04-simulace.jpg)
 
 ```vhdl
  port map(
@@ -143,4 +143,4 @@ p_stimulus : process
         );
         
 ```
-![](Images/04-simulace.jpg)
+
