@@ -143,3 +143,4 @@ p_stimulus : process
         );
         
 ```
+![](Images/04-simulace.jpg)
