@@ -139,7 +139,7 @@ p_stimulus : process
 
 ### Screenshot with simulated time waveforms with all inputs and outputs
 
-![](Images/04-simulace.jpg)
+![](Images/04_simulation.jpg)
 
 
 ### VHDL code from source file top.vhd
@@ -188,4 +188,4 @@ p_stimulus : process
 
 ### Screenshot with simulated time waveforms with all inputs and outputs
 
-
+![](Images/04_simulation_top.png)
