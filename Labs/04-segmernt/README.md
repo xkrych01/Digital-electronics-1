@@ -162,7 +162,7 @@ p_stimulus : process
 
 ## 3) LED(7:4) indicators
 
-### VHDL code for LEDs(7:4)
+### Truth table and VHDL code for LEDs(7:4)
 
 | **Hex** | **Inputs** | **LED(7:4)** |
 | :-: | :-: | :-: |
