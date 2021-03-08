@@ -1,3 +1,6 @@
+# Lab 04 segment
+
+## 1) Preparation tasks
 
 | **Hex** | **Inputs** | **A** | **B** | **C** | **D** | **E** | **F** | **G** |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -19,6 +22,11 @@
 | F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
 
 ![](Images/Schema.png)
+
+
+## 2) Seven-segment display decoder.
+
+### VHDL architecture from source file hex_7seg.vhd
 
 ```vhdl
 architecture Behavioral of hex_7seg is
@@ -83,6 +91,7 @@ end Behavioral;
 
 ```
 
+### VHDL stimulus process from testbench file tb_hex_7seg.vhd
 
 ```vhdl
 p_stimulus : process
@@ -127,7 +136,13 @@ p_stimulus : process
 
 ```
 
+
+### Screenshot with simulated time waveforms with all inputs and outputs
+
 ![](Images/04-simulace.jpg)
+
+
+### VHDL code from source file top.vhd
 
 ```vhdl
  port map(
@@ -143,4 +158,34 @@ p_stimulus : process
         );
         
 ```
+
+
+## 3) LED(7:4) indicators
+
+### VHDL code for LEDs(7:4)
+
+```vhdl
+    -- Display input value
+    LED(3 downto 0) <= SW;
+
+    -- Turn LED(4) on if input value is equal to 0, ie "0000"
+    -- WRITE YOUR CODE HERE
+     LED(4)  <= '1' when (SW = "0000") else '0';
+  
+    -- Turn LED(5) on if input value is greater than "1001"
+    -- WRITE YOUR CODE HERE
+     LED(5)  <= '1' when (SW > "1001") else '0';
+    
+    -- Turn LED(6) on if input value is odd, ie 1, 3, 5, ...
+    -- WRITE YOUR CODE HERE
+    LED(6) <= '1' when (SW = "0001" or SW = "0011" or SW = "0101" or SW = "0111" or SW = "1001" or SW = "1011" or SW = "1101" or SW = "1111") else '0';
+    
+    -- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
+    -- WRITE YOUR CODE HERE
+    LED(7)  <= '1' when (SW = "0001" or SW = "0010" or SW = "0100" or SW = "1000") else '0';
+```
+
+
+### Screenshot with simulated time waveforms with all inputs and outputs
+
 
