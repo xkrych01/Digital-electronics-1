@@ -213,4 +213,5 @@ p_stimulus : process
 
 ### Screenshot with simulated time waveforms with all inputs and outputs
 
+![](Images/s_SW.jpg)
 ![](Images/04_simulation_top.png)
