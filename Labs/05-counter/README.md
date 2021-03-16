@@ -83,6 +83,7 @@ p_reset_gen : process
 
 ## 3) Top level
 
+### VHDL code from source file top.vhd
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
