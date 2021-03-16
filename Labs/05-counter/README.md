@@ -60,6 +60,7 @@ p_reset_gen : process
         s_reset <= '0';
         wait;
     end process p_reset_gen;
+    
     ```
     **Stimulus process**
     ```vhdl
