@@ -36,11 +36,11 @@ p_cnt_up_down : process(clk)
             end if;
         end if;
     end process p_cnt_up_down;
-  ```
+```
 ### Listing of VHDL reset and stimulus processes from testbench file tb_cnt_up_down.vhd
 
    **Reset process**
-```vhdl
+   ```vhdl
 p_reset_gen : process
     begin
         s_reset <= '0';
@@ -49,21 +49,13 @@ p_reset_gen : process
         -- Reset activated
         s_reset <= '1';
         wait for 73 ns;
-
-        s_reset <= '0';
-        wait for 80 ns;
-        
-        -- Reset activated
-        s_reset <= '1';
-        wait for 120 ns;
         
         s_reset <= '0';
         wait;
     end process p_reset_gen;
-    
-    ```
-    **Stimulus process**
-    ```vhdl
+```
+   **Stimulus process**
+```vhdl
     p_stimulus : process
     begin
         report "Stimulus process started" severity note;
@@ -83,9 +75,10 @@ p_reset_gen : process
         report "Stimulus process finished" severity note;
         wait;
     end process p_stimulus;
-    ```
+```
     
-Obrázek funkčnosti že se to přelévá z 15 na 0 a obráceně
+### Screenshot with simulated time waveforms
+![](Images/counter.jpg)
 
 
 ## 3) top
