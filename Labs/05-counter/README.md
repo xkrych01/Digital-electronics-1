@@ -1,9 +1,9 @@
 # Lab 05-counter
 ## 1) Preparation tasks
-### Obrázek se zapojením tlačítek 
+### Figure with connection of push buttons
 ![](Images/Schema_BTN.png)
 
-### Tabulka vypočítaných hodnot
+### Table with calculated values
 | **Time interval** | **Number of clk periods** | **Number of clk periods in hex** | **Number of clk periods in binary** |
    | :-: | :-: | :-: | :-: |
    | 2&nbsp;ms | 200 000 | `x"3_0d40"` | `b"0011_0000_1101_0100_0000"` |
