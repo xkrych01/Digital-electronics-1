@@ -1,5 +1,5 @@
-
-1) časový diagram 3.142
+# Cvičení 6. Display driver
+## 1) časový diagram 3.142
 
 2) vhdl code p_mux
    celý testbench
