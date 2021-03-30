@@ -602,10 +602,14 @@ p_clk_gen : process
     end process p_stimulus;
 ```
 ### Screenshot with simulated time waveforms
+d_ff_arst
 ![](Images/d_ff_arst.jpg)
+d_ff_rst
 ![](Images/d_ff_rst.jpg)
+jk_ff_rst
 ![](Images/jk_ff_rst.jpg)
+t_ff_rst
 ![](Images/t_ff_rst.jpg)
 
-
 ## 4) Shift register
+![](Images/Switch.png)
