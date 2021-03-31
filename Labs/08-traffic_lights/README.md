@@ -143,6 +143,7 @@ p_output_fsm : process(s_state)
     end process p_output_fsm;
 ```
 ### Screenshot(s) of the simulation
+![](Images/simulace_trafic.jpg)
 
 ## 3) Smart controller
 ### State table
