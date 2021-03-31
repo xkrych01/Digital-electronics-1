@@ -16,7 +16,7 @@
 
 ## 2) Traffic light controller
 ### State diagram
-![](Images/diagram_semafor.png)
+![](Images/diagram_trafic.png)
 ### VHDL code of sequential process p_traffic_fsm
 ```vhdl
 p_traffic_fsm : process(clk)
@@ -144,7 +144,7 @@ p_output_fsm : process(s_state)
 ```
 ### Screenshot(s) of the simulation
 ![](Images/reset_trafic.jpg)
-![](Images/simulace_trafic.jpg)
+![](Images/simulation_trafic.jpg)
 
 ## 3) Smart controller
 ### State table
