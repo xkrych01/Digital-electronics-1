@@ -16,7 +16,7 @@
 
 ## 2) Traffic light controller
 ### State diagram
-
+![](Images/diagram_semafor.png)
 ### VHDL code of sequential process p_traffic_fsm
 
 ### VHDL code of combinatorial process p_output_fsm
