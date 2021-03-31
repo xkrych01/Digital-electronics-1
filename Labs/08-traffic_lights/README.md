@@ -144,7 +144,7 @@ p_output_fsm : process(s_state)
 ```
 ### Screenshot(s) of the simulation
 ![](Images/reset_trafic.jpg)
-![](Images/simulation_trafic.jpg)
+![](Images/simulacion_trafic.jpg)
 
 ## 3) Smart controller
 ### State table
