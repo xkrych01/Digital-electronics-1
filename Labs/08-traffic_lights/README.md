@@ -5,6 +5,7 @@
 | **Output R** | `0` | `0` | `0` | `0` | `0` | `1` | `0` | `0` | `0` | `1` | `0` | `0` | `0` | `0` | `1` | `0` |
 
 Obrázek referenčního zapojení
+
 ![](Images/refer_zapojeni.png)
 
 
