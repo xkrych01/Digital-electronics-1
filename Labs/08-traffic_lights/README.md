@@ -148,11 +148,138 @@ p_output_fsm : process(s_state)
 
 ## 3) Smart controller
 ### State table
+| **Current state(00)** | **Direction South** | **Direction West** |
+| :-- | :-: | :-: |
+| `SOUTH_GO`   | green  | red |
+| `WEST_GO`   | red | green |
 
+| **Current state(01)** | **Direction South** | **Direction West** | **Delay** |
+| :-- | :-: | :-: | :-: |
+| `SOUTH_GO`    | green | red | 0 sec |
+| `SOUTH_WAIT`  | yellow | red | 2 sec |
+| `STOP1`      | red | red | 1 sec |
+| `WEST_GO`   | red | green |  |
+
+| **Current state(10)** | **Direction South** | **Direction West** | **Delay** |
+| :-- | :-: | :-: | :-: |
+| `WEST_GO`    | red    | green | 0 sec |
+| `WEST_WAIT`  | red    | yellow | 2 sec |
+| `STOP2`      | red    | red | 1 sec |
+| `SOUTH_GO`   | green  | red |  |
+
+| **Current state (11)** | **Direction South** | **Direction West** | **Delay** |
+| :-: | :-: | :-: | :-: |
+| `STOP1`      | red    | red | 1 sec |
+| `WEST_GO`    | red    | green | 4 sec |
+| `WEST_WAIT`  | red    | yellow | 2 sec |
+| `STOP2`      | red    | red | 1 sec |
+| `SOUTH_GO`   | green  | red | 4 sec |
+| `SOUTH_WAIT` | yellow | red | 2 sec |
 ### State diagram
 
 ### VHDL code of sequential process p_smart_traffic_fsm
+```vhdl
+ p_smart_traffic_fsm : process(clk)
+    begin
+        if rising_edge(clk) then
+            if (reset = '1') then       -- Synchronous reset
+                s_state <= STOP1 ;      -- Set initial state
+                s_cnt   <= c_ZERO;      -- Clear all bits
 
+            elsif (s_en = '1') then
+                
+                case s_state is
+
+                    when STOP1 =>
+                        
+                        if (s_cnt < c_DELAY_1SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            s_state <= WEST_GO;
+                            
+                            s_cnt   <= c_ZERO;
+                        end if;
+
+                    when WEST_GO =>
+                        if (car_south = '0' and car_west = '0') then
+                            s_state <= WEST_GO;
+                        
+                        elsif (car_south = '0' and car_west = '1') then
+                            s_state <= WEST_GO;
+                        
+                        elsif (car_south = '1' and car_west = '0') then
+                            s_state <= WEST_WAIT;
+                                
+                            s_cnt   <= c_ZERO;
+                        
+                        elsif (car_south = '1' and car_west = '1') then
+                            if (s_cnt < c_DELAY_4SEC) then
+                                s_cnt <= s_cnt + 1;
+                            else
+                                s_state <= WEST_WAIT;
+                                
+                                s_cnt   <= c_ZERO;
+                            end if;
+                        end if; 
+                   
+                    when WEST_WAIT =>
+                        if (s_cnt < c_DELAY_2SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            s_state <= STOP2;
+                                
+                            s_cnt   <= c_ZERO;
+                        end if;
+                                                
+                    when STOP2 =>
+                        if (s_cnt < c_DELAY_1SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            s_state <= SOUTH_GO;
+                            
+                            s_cnt   <= c_ZERO;
+                        end if;
+
+                    when SOUTH_GO =>
+                        if (car_south = '0' and car_west = '0') then
+                            s_state <= SOUTH_GO;
+                        
+                        elsif (car_south = '1' and car_west = '0') then
+                            s_state <= SOUTH_GO;
+                        
+                        elsif (car_south = '0' and car_west = '1') then
+                            s_state <= SOUTH_WAIT;
+                                
+                            s_cnt   <= c_ZERO;
+                        
+                        elsif (car_south = '1' and car_west = '1') then
+                            if (s_cnt < c_DELAY_4SEC) then
+                                s_cnt <= s_cnt + 1;
+                            else
+                                s_state <= SOUTH_WAIT;
+                                
+                                s_cnt   <= c_ZERO;
+                            end if;
+                        end if; 
+                   
+                    when SOUTH_WAIT =>
+                        if (s_cnt < c_DELAY_2SEC) then
+                            s_cnt <= s_cnt + 1;
+                        else
+                            s_state <= STOP1;
+                            
+                            s_cnt   <= c_ZERO;
+                        end if;
+                    
+                     
+                    when others =>
+                        s_state <= STOP1;
+
+                end case;
+            end if; -- Synchronous reset
+        end if; -- Rising edge
+    end process p_smart_traffic_fsm;
+```
 
 
 
