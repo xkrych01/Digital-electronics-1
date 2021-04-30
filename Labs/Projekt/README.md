@@ -126,7 +126,7 @@ begin
 end Behavioral;
 
 ```
-![](Image/tread_sensor_tb.jpg)
+![](Images/tread_sensor_tb.jpg)
 
 
 
