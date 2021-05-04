@@ -2,16 +2,16 @@
 
 ### Team members
 
-- **Krýcha Jakub** - (https://github.com/xkrych01/Digital-electronics-1)
-- **Kyselova Yuliia** - (https://github.com/yuliakyselova/Digital-electronics-1)
-- **Lazarević Veljko** - (https://github.com/mvvelja/Digital-electronics-1)
-- **Levák Adam** - (https://github.com/AdamLevak/Digital-electronics-1)
-- **Lovas Václav** - (https://github.com/xlovas00/Digital-electronics-1)
+- **Krýcha Jakub** - https://github.com/xkrych01/Digital-electronics-1
+- **Kyselova Yuliia** - https://github.com/yuliakyselova/Digital-electronics-1
+- **Lazarević Veljko** - https://github.com/mvvelja/Digital-electronics-1
+- **Levák Adam** - https://github.com/AdamLevak/Digital-electronics-1
+- **Lovas Václav** - https://github.com/xlovas00/Digital-electronics-1
 
 
 ### Project objectives
 
-Creating a simulation of console for exercise bike, using hall sensor on the wheel, which will do measuring and displaying speed, distance traveled.
+Cíl projektu byl naprogramovat Rotoped. Veškeré moduly které jsme měli v plánu naprogramovat, jsme naprogramovali i přes menší komplikace. Kód je vypsán níže a tato úloha by se následně dala rozšířit o měření tepu srdce, či výpočet spálených kalorií.
 
 
 ## Hardware description
@@ -21,6 +21,10 @@ Creating a simulation of console for exercise bike, using hall sensor on the whe
 - 2x Button
 - 3x Switch
 - 1x RGB LED
+
+### Diagram
+
+![Diagram](Images/)
 
 
 ## VHDL modules description and simulations
@@ -87,7 +91,7 @@ end architecture;
 ```
 
 ### Simulation waveforms - simulating Timer module
-![project](https://github.com/yuliakyselova/Digital-electronics-1/blob/main/Labs/project/Images/timer.png)
+![project](Images/timer.png)
 
 ### 2. Distance traveled.
 VHDL code of distance traveled  module - `counter_distance.vhd`.
@@ -173,7 +177,7 @@ begin
 end architecture behavioral;
 ```
 ### Simulation waveforms - simulating counter_distance module
-![project](https://github.com/yuliakyselova/Digital-electronics-1/blob/main/Labs/project/Images/counter_distance.png)
+![project](Images/counter_distance.png)
 
 ### 3. Hall sensor.
 VHDL code of hall sensor module - `hall_sonda.vhd`.
@@ -235,7 +239,7 @@ begin
 end Behavioral;
 ```
 ### Simulation waveforms - simulating hall sensor module
-![project](https://github.com/yuliakyselova/Digital-electronics-1/blob/main/Labs/project/Images/hall_sonda.png)
+![project](Images/hall_sonda.png)
 
 ### 4. Tread sensor.
 VHDL code of tread sensor module - `tread_sensor.vhd`.
@@ -342,7 +346,7 @@ begin
 end Behavioral;
 ```
 ### Simulation waveforms - simulating tread sensor module
-![project](https://github.com/yuliakyselova/Digital-electronics-1/blob/main/Labs/project/Images/tread_sensor_tb.jpeg)
+![project](Images/tread_sensor_tb.jpeg)
 
 
 ### 5. Speed. 
