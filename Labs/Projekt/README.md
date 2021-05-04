@@ -16,11 +16,8 @@ Cíl projektu byl naprogramovat Rotoped. Veškeré moduly které jsme měli v pl
 
 ## Hardware description
 
-- Arty A7-35T board
-- 4x 7-segment display
-- 2x Button
-- 3x Switch
-- 1x RGB LED
+Při našem projektu jsme použili desku Arty A7-35T. Na ní využíváme jednu RGB Led diodu, dvě tlačítla (z čehož jedno siuluje šlapání a dalo by se přeprogramovat, na externí hallovu sondu), tři switche a čtyři sady pinnů (JA-JD)  na externí připojení sedmi segmentových displayů. 
+Níže je vypracovaný diagram jak by celý projekt měl fungovat.
 
 ### Diagram
 
