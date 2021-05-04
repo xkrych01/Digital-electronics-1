@@ -29,6 +29,7 @@ Níže je vypracovaný diagram jak by celý projekt měl fungovat.
 ### 1. Timer
 VHDL code of timer module - `timer.vhd`.
 ```vhdl
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -54,7 +55,7 @@ begin
         if rising_edge(clk) then
  
             -- If the negative reset signal is active
-            if rst = '0' then
+            if rst = '1' then
                 Seconds <= (others => '0');
                 Minutes <= (others => '0');
             else
@@ -80,9 +81,9 @@ begin
     end process;
  
     Seconds_units <= std_logic_vector(to_unsigned(to_integer(Seconds mod 10), 4)); 
-    Seconds_tens  <= std_logic_vector(to_unsigned(to_integer(Seconds/10),4)); 
+    Seconds_tens <= std_logic_vector(to_unsigned(to_integer(Seconds/10),4)); 
     Minutes_units <= std_logic_vector(to_unsigned(to_integer(Minutes mod 10),4));  
-    Minutes_tens  <= std_logic_vector(to_unsigned(to_integer(Minutes/10),4)); 
+    Minutes_tens <= std_logic_vector(to_unsigned(to_integer(Minutes/10),4)); 
  
 end architecture;
 ```
@@ -103,12 +104,12 @@ entity counter_distance is
         g_CNT_WIDTH : natural := 4      -- Number of bits for counter
     );
     port(
-        clk      : in  std_logic;       -- Clock from Hall probe
-        reset    : in  std_logic;       -- Synchronous reset
-        cnt_o_A    : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);    -- Output data display A
-        cnt_o_B    : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);    -- Output data display B
-        cnt_o_C    : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);    -- Output data display C
-        cnt_o_D    : out std_logic_vector(g_CNT_WIDTH - 1 downto 0)     -- Output data display D
+        hall       : in  std_logic;       -- Clock from Hall probe
+        reset      : in  std_logic;       -- Synchronous reset
+        cnt_o_A    : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);    -- Output data display A - units
+        cnt_o_B    : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);    -- Output data display B - dozens
+        cnt_o_C    : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);    -- Output data display C - hundreds
+        cnt_o_D    : out std_logic_vector(g_CNT_WIDTH - 1 downto 0)     -- Output data display D - thousands
     );
 end entity counter_distance;
 
@@ -119,12 +120,12 @@ architecture behavioral of counter_distance is
     signal s_cnt_local_B : unsigned(g_CNT_WIDTH - 1 downto 0);
     signal s_cnt_local_C : unsigned(g_CNT_WIDTH - 1 downto 0);
     signal s_cnt_local_D : unsigned(g_CNT_WIDTH - 1 downto 0);
+    
 
 begin
-
-    p_counter_distance : process(clk)
+    p_counter_distance : process(hall)
     begin
-        if rising_edge(clk) then
+        if rising_edge(hall) then
         
             if (reset = '1') then               -- Synchronous reset
                 -- Clear all bits
@@ -135,13 +136,13 @@ begin
 
             else
                 if ( s_cnt_local_A = "1000" and s_cnt_local_B = "1001" and s_cnt_local_C = "1001" and s_cnt_local_D = "1001") then
-                    --Clear all bits
+                    --Clear all bits when value is 9998
                     s_cnt_local_A <= (others => '0');
                     s_cnt_local_B <= (others => '0');
                     s_cnt_local_C <= (others => '0');
                     s_cnt_local_D <= (others => '0');
                 else
-                    if (s_cnt_local_A = "1000") then                        -- display A = 9 -> reset display A
+                    if (s_cnt_local_A = "1000") then                        -- display A = 8 -> reset display A
                         s_cnt_local_A <= "0000";
                         if (s_cnt_local_B = "1001") then                    -- display B = 9 -> reset display B
                             s_cnt_local_B <= "0000";
@@ -173,6 +174,7 @@ begin
     cnt_o_D <= std_logic_vector(s_cnt_local_D);
 
 end architecture behavioral;
+
 ```
 ### Simulation waveforms - simulating counter_distance module
 ![Distance](Images/distance_desitky.jpg)
@@ -236,6 +238,7 @@ begin
     end process p_hall_sonda;
     
 end Behavioral;
+
 ```
 ### Simulation waveforms - simulating hall sensor module
 ![Hall](Images/hall_sonda.jpg)
@@ -343,6 +346,7 @@ begin
     end process p_tread_sensor;
 
 end Behavioral;
+
 ```
 ### Simulation waveforms - simulating tread sensor module
 ![Treading](Images/trd_sensor.jpg)
@@ -365,8 +369,8 @@ entity Velocity_counter is
             gen        : in std_logic;
             clk        : in std_logic;
             reset      : in  std_logic;       -- Synchronous reset                       
-            cnt_o_A    : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);
-            cnt_o_B    : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);
+            cnt_v_A    : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);
+            cnt_v_B    : out std_logic_vector(g_CNT_WIDTH - 1 downto 0);
             
             
            -- ticks      : out std_logic_vector(g_CNT_WIDTH - 1 downto 0)
@@ -402,12 +406,13 @@ p_vel : process(clk,gen)
                convert <= TO_UNSIGNED(integer(s_ticks),8);                                                                
         end if;        
     end process p_vel;
-    cnt_o_B <= std_logic_vector(TO_UNSIGNED(TO_INTEGER(convert mod 10),4));
-    cnt_o_A <= std_logic_vector(TO_UNSIGNED(TO_INTEGER(convert/10),4));
+    cnt_v_B <= std_logic_vector(TO_UNSIGNED(TO_INTEGER(convert mod 10),4));
+    cnt_v_A <= std_logic_vector(TO_UNSIGNED(TO_INTEGER(convert/10),4));
     
     ticks <= s_ticks;
   
 end Behavioral;
+
 ```
 
 ### Simulation waveforms - simulating velocity counter module
@@ -605,7 +610,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity top is
     Port ( 
-        CLK100MHZ : in  STD_LOGIC;
+        CLK100MHZ : in  STD_LOGIC;                          -- all used elements of the board
         BTN       : in  STD_LOGIC_vector(2-1 downto 0);
         SW        : in  std_logic_vector(3-1 downto 0);
         JA        : out std_logic_vector(7-1 downto 0);
@@ -618,31 +623,33 @@ entity top is
 end top;
 
 architecture Behavioral of top is
-    signal s_hall  : std_logic;
+    signal s_hall  : std_logic;                                 -- signals for hall_sond, velocity_counter and distance counter
     signal s_trdhs : std_logic;
     signal s_drl   : std_logic;
     
-    signal s_timer0    : std_logic_vector(4 - 1 downto 0);
+    signal s_timer0    : std_logic_vector(4 - 1 downto 0);      -- signals for output Timer
     signal s_timer1    : std_logic_vector(4 - 1 downto 0);
     signal s_timer2    : std_logic_vector(4 - 1 downto 0);
     signal s_timer3    : std_logic_vector(4 - 1 downto 0);
                                                           
-    signal s_speed0    : std_logic_vector(4 - 1 downto 0);
+    signal s_speed0    : std_logic_vector(4 - 1 downto 0);      -- signals for output Velocity_counter
     signal s_speed1    : std_logic_vector(4 - 1 downto 0);
     signal s_speed2    : std_logic_vector(4 - 1 downto 0);
     signal s_speed3    : std_logic_vector(4 - 1 downto 0);
                                                           
-    signal s_distance0 : std_logic_vector(4 - 1 downto 0);
+    signal s_distance0 : std_logic_vector(4 - 1 downto 0);      -- signals for distance counter
     signal s_distance1 : std_logic_vector(4 - 1 downto 0);
     signal s_distance2 : std_logic_vector(4 - 1 downto 0);
     signal s_distance3 : std_logic_vector(4 - 1 downto 0);
 begin
-     
-    trd_sensor : entity work.tread_sensor
+  
+    -- assignment inputs and outputs for all modules and connection all modules with defined signals
+    trd_sensor : entity work.tread_sensor           
     port map (
         clk     => CLK100MHZ,
         rst     => BTN(1),
         btn_o   => BTN(0),
+        trd_o   => s_trdhs,
         trd_led => LED0
     
     );
@@ -683,8 +690,8 @@ begin
         gen     => s_hall,
         clk     => CLK100MHZ,        
         reset   => BTN(1),      
-        cnt_o_A => s_speed3,
-        cnt_o_B => s_speed2  
+        cnt_v_A => s_speed3,
+        cnt_v_B => s_speed2  
     );                            
     
     driver : entity work.driver_7seg_4digits
@@ -745,6 +752,7 @@ begin
    
     
 end Behavioral;
+
 ```
 
 ### Simulation waveforms - simulating top module
