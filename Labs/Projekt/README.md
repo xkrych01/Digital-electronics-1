@@ -88,7 +88,8 @@ end architecture;
 ```
 
 ### Simulation waveforms - simulating Timer module
-![Timer](Images/timer.png)
+![Timer](Images/timer_sekundy.jpg)
+![Timer](Images/Timer_minuty.jpg)
 
 ### 2. Distance traveled.
 VHDL code of distance traveled  module - `counter_distance.vhd`.
@@ -174,7 +175,8 @@ begin
 end architecture behavioral;
 ```
 ### Simulation waveforms - simulating counter_distance module
-![Distance](Images/counter_distance.png)
+![Distance](Images/distance_desitky.jpg)
+![Distance](Images/distance_tisice.jpg)
 
 ### 3. Hall sensor.
 VHDL code of hall sensor module - `hall_sonda.vhd`.
@@ -236,7 +238,7 @@ begin
 end Behavioral;
 ```
 ### Simulation waveforms - simulating hall sensor module
-![Hall](Images/hall_sonda.png)
+![Hall](Images/hall_sonda.jpg)
 
 ### 4. Tread sensor.
 VHDL code of tread sensor module - `tread_sensor.vhd`.
@@ -343,7 +345,7 @@ begin
 end Behavioral;
 ```
 ### Simulation waveforms - simulating tread sensor module
-![Treading](Images/tread_sensor_tb.jpeg)
+![Treading](Images/trd_sensor.jpg)
 
 
 ### 5. Speed. 
@@ -408,7 +410,8 @@ p_vel : process(clk,gen)
 end Behavioral;
 ```
 
-![Speed]()
+### Simulation waveforms - simulating velocity counter module
+![Speed](Images/speed.jpg)
 
 ### 6. Counter 7segment_4digits
 
@@ -585,6 +588,11 @@ end architecture Behavioral;
 
 ```
 
+### Simulation waveforms - simulating counter 7seg_4digits module
+![Counter 7seg_4digits](Images/counter_4digits.jpg)
+
+
+
 ## TOP module description and simulations
 
 ### Diagram of `top` module.
@@ -738,6 +746,10 @@ begin
     
 end Behavioral;
 ```
+
+### Simulation waveforms - simulating top module
+![Top](Images/top.jpg)
+
 
 ## Video
 
