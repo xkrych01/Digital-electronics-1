@@ -24,7 +24,7 @@ Cíl projektu byl naprogramovat Rotoped. Veškeré moduly které jsme měli v pl
 
 ### Diagram
 
-![Diagram](Images/Projekt_diagram.jpg)
+![Diagram](Images/Projekt_diagram.png)
 
 
 ## VHDL modules description and simulations
