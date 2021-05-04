@@ -410,7 +410,7 @@ end Behavioral;
 
 ![Speed]()
 
-### Counter 7segment_4digits
+### 6. Counter 7segment_4digits
 
 ```vhdl
 library ieee;
@@ -741,8 +741,12 @@ end Behavioral;
 
 ## Video
 
+### Link -
 
 
+## Evaluation of project
+
+Projekt se zakládal na znalostech základů VHDL a celkové komunikaci v týmu. 80-90% projektu, se dalo řešit přes vyřešené cvičení, jež jsme dělali. Zbytek byl úmorné hledání na internetu, jak se dá něco udělat lépe, či převést nějaká čísla na jiný datový typ. Každopádně je toto velice zajímavá zkušenost a dobrá příprava projektování, či tvoření věcí v budoucím zaměstnání.
 
 ## References
 
